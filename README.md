@@ -9,8 +9,8 @@
 
 << [link to demo presentation slides](#) >>
 
-### Team: << team name >>
-#### << Erica Rodrigues, Julia Steckler, Brianna >>
+### Team: Geeklords
+#### Erica Rodrigues, Julia Steckler, Brianna Sexton
 
 ***
 
@@ -61,21 +61,21 @@ The Project is broken down into the following file structure:
 
    * You must outline the team member roles and who was responsible for each class/method, both individual and collaborative.
 
-### Software Lead - << name >>
+### Software Lead - Brianna Sexton
 
-<< Worked as integration specialist by... >>
+Worked as integration specialist by making sure that programming by front and back end specialist flows efficiently and clearly. Test game constantly to make sure all actions are working.
 
-### Front End Specialist - << name >>
+### Front End Specialist - Julia Steckler
 
-<< Front-end lead conducted significant research on... >>
+Front-end lead conducted significant research on the layout and design of game. Organized use of computer buttons for user to control their player. Creates efficient internal linking and user-friendly navigation of game and menus.
 
-### Back End Specialist - << name >>
+### Back End Specialist - Erica Rodrigues
 
-<< The back end specialist... >>
+The back end specialist specifically programs outcomes of actions taken from user. Programs what happens and how a user wins/loses game. Uses classes to organize actions.
 
 ## Testing *(Software Lead)*
 
-* << Describe your testing strategy for your project. >>
+* Constanyly testing the game focusing on isolated features
     * << Example >>
 
 ## ATP
