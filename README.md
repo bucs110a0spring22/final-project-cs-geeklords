@@ -22,7 +22,8 @@
 
 ## User Interface Design *(Front End Specialist)*
 
-* << A wireframe or drawing of the user interface concept along with a short description of the interface. You should have one for each screen in your program. >>
+* << Welcome and Game Over Screen: https://docs.google.com/document/d/1PU83rbIjToGl7bUlHPRCLUX5jQfMAl0z6P-sFnBjYNQ/edit?usp=sharing >>
+  
     * For example, if your program has a start screen, game screen, and game over screen, you should include a wireframe / screenshot / drawing of each one and a short description of the components
 * << You should also have a screenshot of each screen for your final GUI >>
 
@@ -40,7 +41,7 @@
         * ![class diagram](assets/class_diagram.jpg)
     * This does not need to be overly detailed, but should show how your code fits into the Model/View/Controller paradigm.
 * Classes
-    * << You should have a list of each of your classes with a description. >>
+    * << https://docs.google.com/document/d/1FgmMeB_uBYYEhKeZepXIU7b5l4ADS3TmlercUzuFe4g/edit?usp=sharing >>
 
 ## Project Structure *(Software Lead)*
 
