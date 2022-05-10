@@ -1,44 +1,31 @@
-import pygame
-#import your controller
-
 def main():
-    pygame.init()
-    #Create an instance on your controller object
-    #Call your mainloop
-
-mylist = ()
-n=int(input("Enter four numbers:"))
-for i in range(0,n):
-  ele = int(input())
-print(mylist)
+    global s, snack, win
+    win = pygame.display.set_mode((width,height))
+    s = snake((255,0,0), (10,10))
+    s.addCube()
+    snack = cube(randomSnack(rows,s), color=(0,255,0))
+    flag = True
+    clock = pygame.time.Clock()
     
-  
-    ###### NOTHING ELSE SHOULD GO IN main(), JUST THE ABOVE 3 LINES OF CODE ######
+    while flag:
+        pygame.time.delay(50)
+        clock.tick(10)
+        s.move()
+        headPos = s.head.pos
+        if headPos[0] >= 20 or headPos[0] < 0 or headPos[1] >= 20 or headPos[1] < 0:
+            print("Score:", len(s.body))
+            s.reset((10, 10))
 
-class Snake:
-  """Directs snake up, down, left, right, and controls color, speed, growth, actions
-  """
-  def __init__(self, x, y, filename):
-    self.x = x
-    self.y = y
-    self.image = str(filename)
+        if s.body[0].pos == snack.pos:
+            s.addCube()
+            snack = cube(apples(rows,s), color=(0,255,0))
+            
+        for x in range(len(s.body)):
+            if s.body[x].pos in list(map(lambda z:z.pos,s.body[x+1:])):
+                print("Score:", len(s.body))
+                s.reset((10,10))
+                break
+                    
+        redrawWindow()
 
-class Apples:
-  """Positions apples and keeps track of score
-  """
-  def innit(self, x, y, filename, score):
-    self.x = x
-    self.y = y
-    self.image = str(filename)
-    se.f.score = 
-    
-class Background:
-  """Displays user score, creates snake's boundaries, displays snake, displays fruit
-  """
-  def __init__(self, filename):
-    self.image = str(filename)
-
-  
-# https://codefather.tech/blog/if-name-main-python/
-if __name__ == '__main__':
-    main()
+main()

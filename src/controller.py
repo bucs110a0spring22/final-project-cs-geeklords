@@ -1,86 +1,64 @@
 import pygame
-from src.utility import Utility
 
 class Controller:
-  def __init__(self, width=480, height=320):
-    pygame.init()
-    self.width = width
-    self.height = height
-    Utility.screen_height = height
-    Utility.screen_width = width
-    self.screen = pygame.display.set_mode( (self.width, self.height))
-    self.background = pygame.Surface(self.screen.get_size())
-
-    self.background.fill( (250, 250, 250))
-    ##white background
-    pygame.key_set_repeat(1, 50)
-
-    player = pleayer.Player(x=10, y=10, filenames)
-
-    enemies = pygame.sprite.Group()
-    num_enemies = 3
-    for i in range(num_enemies):
-      x = random.randrange(100, 400)
-      y = random.randrange(100, 400)
-      enemy = enemy.Enemy(x=x, y=y, enemy_filenames)
-      enemies.add(enemy)
-
-    models = (self.player,)+tuple(enemies)
-    all_sprites = pygame.sprite.Group(models)
-
-    self.state = "RUNNING"
-    
-
-    #draw() draws all sprites in the group on the screen
-    #update() calls update on all sprites in the group
-    #spritecollide() checks if any sprite in a group collided with a specific sprite
-    
-
-
-  def mainloop():
-    while self.state == "RUNNING":
-      #retrieve user events
-      #respond to user events
-      for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-          self.state = "DONE"
-        if event.type == pygame.KEYDOWN:
-          if event.key == pygame.K_UP:
-            self.player.move("UP")
-          elif event.key == pygame.K_DOWN:
-            self.player.move("DOWN")
-          elif event.key == pygame.K_LEFT:
-            self.player.move("LEFT")
-          elif event.key == pygame.K_RIGHT:
-            self.player.move("RIGHT")
-      #update all models
-      self.all_sprites.update()
-
-      #fights is a tuple of enemies that collided with the player
-      fights = pygame.sprite.spritecollide(self.player, self.enemies)
-      if fights:
-        #looping through each enemy that collided with the player
-        for enemy in fights:
-          result = self.player.fight(enemy)
-          if result:
-            enemy.kill()
-          else:
-            self.player.health -= 1
-      #redraw the screen
-      self.screen.blit(background, (0,0))
-      if self.player.health == 0:
-        self.sate = "GAMEOVER"
-
-      self.all_sprites.draw()
-
-      pygame.display.flip()
-
-  def gameoverloop(self):
-    self.gobackground
-    self.gobackground.fill(250, 0, 0)
-    self
-    pygame.display.flip()
-    
-    
-
   
+  def __init__(self, width, height):
+    """Takes two parameters width and height
+    Sets up pygame data"""
+    pygame.init()
+    self.width = 500
+    self.height = 500
+    self.screen = pygame.display.set_mode((self.width, self.height)) 
+    clock = pygame.time.Clock()
+    self.background = pygame.Surface(self.screen.get_size()).convert()
+    self.background.fill((255, 255, 255)) 
+    
+  def mainloop(self):
+    """Select state loop"""
+    running = True
+    while True:
+      if(self.state == "START"):
+        self.gameLoop()
+      elif(self.state == "GAMEOVER"):
+        self.gameOver()
+      
+  def gameLoop(self):
+      """Controls snake movement and checks for collison"""
+    while self.state == "GAME":
+      for event in pygame.event.get():
+        if event.type == pygame.QUIT
+        elif event.type == pygame.KEYDOWN:
+        if event.key == pygame.K_UP:
+            self.snake.up(0, 1)
+        elif event.key == pygame.K_LEFT:
+            self.snake.left(-1, 0)
+        elif event.key == pygame.K_DOWN:
+            self.snake.down(0, -1)
+        elif event.key == pygame.K_RIGHT:
+            self.snake.right(1, 0)
+    #controls snake movement
+    pygame.sprite.spritecollide(self.player, self.enemies)
+    if self_position[0] == block[0] and self_position[1] == block[1]:
+      gameover()
+    pygame.snake.update()
+    #checks for collision
+
+  def gameover(self):
+      """Exits game when user presses quit button and ends game when snake touches its own body"""
+      if event.type == pygame.QUIT:
+        pygame.display.upate()
+        quit()
+        
+      for block in self_body[1:]: 
+        if self_position[0] == block[0] and self_position[1] == block[1]:
+          screen = pygame.display.set_mode((500, 500)) 
+          pygame.display.set_caption('GAME OVER')
+          screen.fill(red)
+          self.screen.blit(snake, apple)
+          pygame.display.update():
+          while True:
+            for event in pygame.event.get():
+              if event.type == pygame.QUIT:
+                  sys.exit()
+
+    

@@ -83,5 +83,6 @@ The back end specialist specifically programs outcomes of actions taken from use
 | Step                  | Procedure     | Expected Results  | Actual Results |
 | ----------------------|:-------------:| -----------------:| -------------- |
 |  1  | Run Counter Program  | GUI window appears with count = 0  |          |
-|  2  | click count button  | display changes to count = 1 |                 |
-etc...
+|  2  | click count button  | display changes to count = 1 |                 |etc...
+REFERENCES:
+https://riptutorial.com/pygame/example/18046/event-loop
