@@ -1,3 +1,12 @@
+"""import pygame
+from pygame.locals import *
+pygame.init()
+screen_width = 180
+screen_height = 180
+window = pygame.display.set_mode((screen_width,screen_height))
+background = pygame.image.load('background.png')
+
+
 def show_score(choice, color, font, size):
     score_font = pygame.font.SysFont(font, size)
     score_surface = score_font.render('Score : ' + str(score), True, color)
@@ -9,16 +18,6 @@ def show_score(choice, color, font, size):
     game_window.blit(score_surface, score_rect)
 
 
- # GFX
-    game_window.fill(black)
-    for pos in snake_body:
-        # Snake body
-        # .draw.rect(play_surface, color, xy-coordinate)
-        # xy-coordinate -> .Rect(x, y, size_x, size_y)
-        pygame.draw.rect(game_window, green, pygame.Rect(pos[0], pos[1], 10, 10))
-
-    # Snake food
-    pygame.draw.rect(game_window, white, pygame.Rect(food_pos[0], food_pos[1], 10, 10))
 
     # Game Over conditions
     # Getting out of bounds
@@ -34,5 +33,4 @@ def show_score(choice, color, font, size):
     show_score(1, white, 'consolas', 20)
     # Refresh game screen
     pygame.display.update()
-    # Refresh rate
-    fps_controller.tick(difficulty)
+"""

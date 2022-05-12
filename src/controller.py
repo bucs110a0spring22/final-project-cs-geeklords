@@ -1,64 +1,118 @@
-import pygame
 
-class Controller:
-  
-  def __init__(self, width, height):
-    """Takes two parameters width and height
-    Sets up pygame data"""
-    pygame.init()
-    self.width = 500
-    self.height = 500
-    self.screen = pygame.display.set_mode((self.width, self.height)) 
-    clock = pygame.time.Clock()
-    self.background = pygame.Surface(self.screen.get_size()).convert()
-    self.background.fill((255, 255, 255)) 
-    
-  def mainloop(self):
-    """Select state loop"""
-    running = True
-    while True:
-      if(self.state == "START"):
-        self.gameLoop()
-      elif(self.state == "GAMEOVER"):
-        self.gameOver()
       
-  def gameLoop(self):
-      """Controls snake movement and checks for collison"""
-    while self.state == "GAME":
-      for event in pygame.event.get():
-        if event.type == pygame.QUIT
-        elif event.type == pygame.KEYDOWN:
-        if event.key == pygame.K_UP:
-            self.snake.up(0, 1)
-        elif event.key == pygame.K_LEFT:
-            self.snake.left(-1, 0)
-        elif event.key == pygame.K_DOWN:
-            self.snake.down(0, -1)
-        elif event.key == pygame.K_RIGHT:
-            self.snake.right(1, 0)
-    #controls snake movement
-    pygame.sprite.spritecollide(self.player, self.enemies)
-    if self_position[0] == block[0] and self_position[1] == block[1]:
-      gameover()
-    pygame.snake.update()
-    #checks for collision
+import pygame
+import time
+import random
+from src.snake import Snake
+from src.apple import Apple
+ 
+pygame.init()
+ 
+#size of screen
+screen_width = 600
+screen_height = 400
 
-  def gameover(self):
-      """Exits game when user presses quit button and ends game when snake touches its own body"""
-      if event.type == pygame.QUIT:
-        pygame.display.upate()
-        quit()
+#create screen 
+screen = pygame.display.set_mode((screen_width, screen_height))
+ 
+#create the clock
+clock = pygame.time.Clock()
+ 
+ 
+def gameLoop():
+    game_over = False
+ 
+    #start in the middle
+    x = screen_width / 2
+    y = screen_height / 2
+ 
+    new_x = 0
+    new_y = 0
+
+    #create a snake
+    snake = Snake()
+ 
+    #create an apple
+    apple = Apple()
+ 
+    #load the background image
+    bg = pygame.image.load("background.png")
+
+    while not game_over:
         
-      for block in self_body[1:]: 
-        if self_position[0] == block[0] and self_position[1] == block[1]:
-          screen = pygame.display.set_mode((500, 500)) 
-          pygame.display.set_caption('GAME OVER')
-          screen.fill(red)
-          self.screen.blit(snake, apple)
-          pygame.display.update():
-          while True:
-            for event in pygame.event.get():
-              if event.type == pygame.QUIT:
-                  sys.exit()
+        #display the background
+        screen.blit(bg, (0, 0))
+ 
+        for event in pygame.event.get():
+            
+            #game over
+            if event.type == pygame.QUIT:
+                game_over = True
+            
+            #presses a key
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_LEFT:
+                    new_x = -10
+                    new_y = 0
+                elif event.key == pygame.K_RIGHT:
+                    new_x = 10
+                    new_y = 0
+                elif event.key == pygame.K_UP:
+                    new_y = -10
+                    new_x = 0
+                elif event.key == pygame.K_DOWN:
+                    new_y = 10
+                    new_x = 0
+ 
+        # If you run off the map
+        if x >= screen_width or x < 0 or y >= screen_height or y < 0:
+            game_over = True
 
-    
+        #replace new coordinates
+        x += new_x
+        y += new_y
+       
+        #drap an apple
+        Apple.draw_apple(apple, screen)
+
+        #add the new position to the snake (will draw in background)
+        addition = []
+        addition.append(x)
+        addition.append(y)
+        snake.list_snake.append(addition)
+        
+        #if the snake did not actually eat anything, only display the current length of the snake
+        if len(snake.list_snake) > snake.length:
+            #don't show additional pieces of the snake unless the length has increased
+            del snake.list_snake[0]
+ 
+        #draw the snake over the background
+        Snake.draw_snake(snake, screen)
+ 
+        #update the display
+        pygame.display.update()
+ 
+        #check to see if the snake ate the apple
+        if x == apple.applex and y == apple.appley:
+            #create a new apple
+            apple = Apple()
+            
+            #inccrease the length of the snake
+            snake.length += 1
+        
+        #tick the clock
+        clock.tick(10)
+ 
+    pygame.quit()
+    quit()
+ 
+ 
+gameLoop()
+
+
+
+
+
+
+
+

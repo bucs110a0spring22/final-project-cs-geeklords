@@ -1,13 +1,12 @@
 :warning: Everything between << >> needs to be replaced (remove << >> after replacing)
 # CS110 Project Proposal
-# << Project Title >>
+# Snake Game
 ## CS 110 Final Project
-### << Semester, Year >>
+### Spring 2022
 ### [Assignment Description](https://docs.google.com/document/d/1H4R6yLL7som1lglyXWZ04RvTp_RvRFCCBn6sqv-82ps/edit#)
 
-<< [repl](#) >>
-
-<< [link to demo presentation slides](#) >>
+[Snake Game Presentation Repl](https://replit.com/@Brianna-OO/final-project-cs-geeklords#main.py) \
+[Snake Game Presentation Demo](https://docs.google.com/presentation/d/1KRhsGmiyhKvFk8tZsDDbPL1Xe0GopRUtqusd4xfNnnM/edit#slide=id.g11bf020bd32_0_0)
 
 ### Team: Geeklords
 #### Erica Rodrigues, Julia Steckler, Brianna Sexton
@@ -16,7 +15,7 @@
 
 ## Project Description *(Software Lead)*
 
-<< Give an overview of your project >>
+We decided to replicate the classic snake game as our final project. The basic idea of the snake game is a snake moves around a box trying to eat apple. Once the snake eats an apple, it grows in size, and a new apple is spawned for the snake to eat. The game is more complicated because if the snake bites itself (runs into its body) or runs into the boundaries of the box, the game is over. The user controls the direction of the snake's head (up, down, left, or right), and the snake's body follows.
 
 ***    
 
@@ -30,26 +29,30 @@
 ***        
 
 ## Program Design *(Backend Specialist)*
-
-* Non-Standard libraries
-    * << You should have a list of any additional libraries or modules used (pygame, request) beyond non-standard python. >>
-    * For each additional module you should include
-        * url for the module documentation
-        * a short description of the module
+ 
 * Class Interface Design
     * << A simple drawing that shows the class relationships in your code (see below for an example). >>
         * ![class diagram](assets/class_diagram.jpg)
     * This does not need to be overly detailed, but should show how your code fits into the Model/View/Controller paradigm.
-* Classes
-    * << https://docs.google.com/document/d/1FgmMeB_uBYYEhKeZepXIU7b5l4ADS3TmlercUzuFe4g/edit?usp=sharing >>
+* Classes 
+  * Controller: Runs the main loop for starting the game, playing the game, and exits when the snake collides into the wall or itself
+  * Snake: Holds the position of the snake, size of snake, adds length to the snake when it eats an apple, holds conditions where the snake dies
+  * Apples: Holds the position for the apples, spawns new apples at random locations, allows snake to collide with apples
+
 
 ## Project Structure *(Software Lead)*
 
 The Project is broken down into the following file structure:
 
 * main.py
-* src
-    * <all of your python files should go here>
+* src: \
+  snake.py \
+  apples.py \
+  controller.py \
+  utility.py
+  
+    
+  
 * assets
     * <all of your media, i.e. images, font files, etc, should go here)
 * etc
@@ -79,10 +82,17 @@ The back end specialist specifically programs outcomes of actions taken from use
     * << Example >>
 
 ## ATP
+|Step|Procedure|Expected Results|Actual Results| 
+|-------|:-------------:| -----------------:| -------------- |
+|1|Press Run Button|Display of Main Menu Screen|
+|2| Press Play to Begin Game|Menu screen disappears and game screen displays. On the game screen there is a snake and apple.|  |
+|3| Press Left arrow key | Snake character moves left| |
+|4| Press Right arrow key| Snake character moves right| |
+|5| Press up arrow key| Snake character moves up| |
+|6| Press down arrow key| Snake character moves down| | 
+|7| Move snake to eat apple| Snake grows in length, current apple is eaten and new apple spwans| | 
+|8| Move snake to hit boundaries| Game over screen| |
+|9| Have snake bite itself| Game over screen| | 
 
-| Step                  | Procedure     | Expected Results  | Actual Results |
-| ----------------------|:-------------:| -----------------:| -------------- |
-|  1  | Run Counter Program  | GUI window appears with count = 0  |          |
-|  2  | click count button  | display changes to count = 1 |                 |etc...
 REFERENCES:
 https://riptutorial.com/pygame/example/18046/event-loop
