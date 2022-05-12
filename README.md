@@ -21,7 +21,7 @@ We decided to replicate the classic snake game as our final project. The basic i
 
 ## User Interface Design *(Front End Specialist)*
 
-* << Welcome and Game Over Screen: https://docs.google.com/document/d/1PU83rbIjToGl7bUlHPRCLUX5jQfMAl0z6P-sFnBjYNQ/edit?usp=sharing >>
+*  Welcome and Game Over Screen: https://docs.google.com/document/d/1PU83rbIjToGl7bUlHPRCLUX5jQfMAl0z6P-sFnBjYNQ/edit?usp=sharing >>
   
     * For example, if your program has a start screen, game screen, and game over screen, you should include a wireframe / screenshot / drawing of each one and a short description of the components
 * << You should also have a screenshot of each screen for your final GUI >>
@@ -31,9 +31,8 @@ We decided to replicate the classic snake game as our final project. The basic i
 ## Program Design *(Backend Specialist)*
  
 * Class Interface Design
-    * << A simple drawing that shows the class relationships in your code (see below for an example). >>
-        * ![class diagram](assets/class_diagram.jpg)
-    * This does not need to be overly detailed, but should show how your code fits into the Model/View/Controller paradigm.
+    * ![ClassDiagrams](assets/ClassDiagrams.png)
+
 * Classes 
   * Controller: Runs the main loop for starting the game, playing the game, and exits when the snake collides into the wall or itself
   * Snake: Holds the position of the snake, size of snake, adds length to the snake when it eats an apple, holds conditions where the snake dies
@@ -54,7 +53,8 @@ The Project is broken down into the following file structure:
     
   
 * assets
-    * <all of your media, i.e. images, font files, etc, should go here)
+    * ![Apple](apple.png)
+    * ![Background](background.png)
 * etc
     * <This is a catch all folder for things that are not part of your project, but you want to keep with your project. Your demo video should go here.>
 
@@ -66,11 +66,11 @@ The Project is broken down into the following file structure:
 
 ### Software Lead - Brianna Sexton
 
-Worked as integration specialist by making sure that programming by front and back end specialist flows efficiently and clearly. Test game constantly to make sure all actions are working.
+Worked as integration specialist by making sure that programming by front and back end specialist flows efficiently and clearly. Test game constantly to make sure all actions are working. Creates ATP and final demo once program is complete.
 
 ### Front End Specialist - Julia Steckler
 
-Front-end lead conducted significant research on the layout and design of game. Organized use of computer buttons for user to control their player. Creates efficient internal linking and user-friendly navigation of game and menus.
+Front-end specialist conducted significant research on the layout and design of game. Organized use of computer buttons for user to control their player. Creates efficient internal linking and user-friendly navigation of game and menus.
 
 ### Back End Specialist - Erica Rodrigues
 
@@ -78,21 +78,22 @@ The back end specialist specifically programs outcomes of actions taken from use
 
 ## Testing *(Software Lead)*
 
-* Constanyly testing the game focusing on isolated features
-    * << Example >>
+* Constantly testing the game focusing on isolated features
+    * first creating basic program, then testing after each individual feature is added (apples, background, etc.)
+    * isolating certain program features when needed to be tested
 
 ## ATP
 |Step|Procedure|Expected Results|Actual Results| 
 |-------|:-------------:| -----------------:| -------------- |
-|1|Press Run Button|Display of Main Menu Screen|
-|2| Press Play to Begin Game|Menu screen disappears and game screen displays. On the game screen there is a snake and apple.|  |
-|3| Press Left arrow key | Snake character moves left| |
-|4| Press Right arrow key| Snake character moves right| |
-|5| Press up arrow key| Snake character moves up| |
-|6| Press down arrow key| Snake character moves down| | 
-|7| Move snake to eat apple| Snake grows in length, current apple is eaten and new apple spwans| | 
-|8| Move snake to hit boundaries| Game over screen| |
-|9| Have snake bite itself| Game over screen| | 
+|1|Press "Run" button displayed on on application|Display of main menu screen|Correct|
+|2| Press "Play" button on main menu to begin game|Menu screen disappears and game screen displays. On the game screen there is a snake and apple.|Correct |
+|3| Press Left arrow key on computer| Snake character moves left|Correct|
+|4| Press Right arrow key on computer| Snake character moves right|Correct |
+|5| Press up arrow key on computer| Snake character moves up|Correct |
+|6| Press down arrow key on computer| Snake character moves down|Correct| 
+|7| Move snake towards apple with arrow keys on computer to eat apple at randomly generated place| Snake grows in length, current apple is eaten and new apple spwans|Correct| 
+|8| Move snake with arrow keys on computer to hit screen boundaries| Snake hits boundaries, and Game over screen appears|Correct|
+|9| Have snake bite itself by running into itself using arrow keys on computer| Game over screen|Correct| 
 
 REFERENCES:
 https://riptutorial.com/pygame/example/18046/event-loop
