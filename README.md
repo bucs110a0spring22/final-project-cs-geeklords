@@ -21,9 +21,9 @@ We decided to replicate the classic snake game as our final project. The basic i
 
 ## User Interface Design *(Front End Specialist)*
 
-*  Welcome and Game Over Screen: https://docs.google.com/document/d/1PU83rbIjToGl7bUlHPRCLUX5jQfMAl0z6P-sFnBjYNQ/edit?usp=sharing >>
-  
-    * For example, if your program has a start screen, game screen, and game over screen, you should include a wireframe / screenshot / drawing of each one and a short description of the components
+*  Welcome and Game Over Screen Original Design:
+  ![GUIOriginalDesign](assets/GUI.png)
+
 * << You should also have a screenshot of each screen for your final GUI >>
 
 ***        
@@ -44,7 +44,8 @@ We decided to replicate the classic snake game as our final project. The basic i
 The Project is broken down into the following file structure:
 
 * main.py
-* src: \
+* SCR: \
+  pycache \
   snake.py \
   apples.py \
   controller.py \
@@ -52,12 +53,10 @@ The Project is broken down into the following file structure:
   
     
   
-* assets
-    * ![Apple](apple.png)
-    * ![Background](background.png)
+* Assets
+    * Apple
+    * Background
 * etc
-    * <This is a catch all folder for things that are not part of your project, but you want to keep with your project. Your demo video should go here.>
-
 ***
 
 ## Tasks and Responsibilities *(Software Lead)*
@@ -97,3 +96,5 @@ The back end specialist specifically programs outcomes of actions taken from use
 
 REFERENCES:
 https://riptutorial.com/pygame/example/18046/event-loop
+https://www.geeksforgeeks.org/snake-game-in-python-using-pygame-module/
+https://www.edureka.co/blog/snake-game-with-pygame/
