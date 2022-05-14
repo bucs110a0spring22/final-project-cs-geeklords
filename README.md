@@ -50,13 +50,13 @@ The Project is broken down into the following file structure:
   pycache \
   snake.py \
   apples.py \
-  controller.py \
-  utility.py
+  controller.py 
+
   
     
   
 * Assets
-    * Apple
+
     * Background
 * etc
 ***
