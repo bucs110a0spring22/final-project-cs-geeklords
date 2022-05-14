@@ -1,4 +1,3 @@
-
 import pygame
 import random
 
@@ -20,5 +19,4 @@ class Apple:
         #draw the apple to the screen
         pygame.draw.rect(screen, red, [self.applex, self.appley, 20, 20])
 
-#bg = pygame.image.load("background.png")
- #     bg = pygame.transform.scale(bg, (600, 400))
+

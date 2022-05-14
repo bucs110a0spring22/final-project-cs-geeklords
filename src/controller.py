@@ -1,6 +1,4 @@
-      
 import pygame
-import sys
 from src.snake import Snake
 from src.apple import Apple
 import time
@@ -9,55 +7,23 @@ pygame.font.init()
  
 #create the clock
 clock = pygame.time.Clock()
+
 class Controller:
   def __init__(self, screen_width=600, screen_height=400):
     pygame.init()
-    #size of screen
-    screen_width = 600
-    screen_height = 400
 
     #create screen 
     screen = pygame.display.set_mode((screen_width, screen_height))
-    bg = pygame.image.load("background.png")
+    bg = pygame.image.load("assets/background.png")
     screen.blit(bg, (0, 0))
     #create the clock
     #clock = pygame.time.Clock()
-    
-  def mainLoop(self):
-      #self.state = "START"
-      self.state = "Game"
-      print("This is mainloop")
-      while True:
-          if(self.state == "START"):
-            print("start loop has been called")
-            self.startLoop()
-          elif(self.state == "GAME"):
-            self.gameloop()
-            print("game loop has been called")
-          elif(self.state == "GAME OVER"):
-            print("game over loop has been called")
-            self.gameoverloop()
-
-  def startLoop(self):
-        pygame.display.set_caption("Menu")
-        while (self.state == "START"):
-        
-          for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-              pygame.quit()
-              self.state = "GAME OVER"
-            if event.type == pygame.KEYDOWN:
-              if event.key == pygame.K_SPACE:
-                self.state = "GAME"
-              if event.key == pygame.K_q:
-                pygame.quit()
-                quit()
 
   def startScreen():
     myfont = pygame.font.SysFont('times new roman', 30)
     text_1 = myfont.render('Snake Game', True, (141,238,238))
     text_2 = myfont.render('The Game is About to Begin', True, (193,255,193))
-    bg = pygame.image.load("background.png")
+    bg = pygame.image.load("assets/background.png")
     bg = pygame.transform.scale(bg, (600, 400))
     screen_width = 600
     screen_height = 400
@@ -66,7 +32,6 @@ class Controller:
     screen.blit(text_1, (200,200))
     screen.blit(text_2,(100, 160))
     pygame.display.flip()
-    print("This is where startScreen is called")
     time.sleep(3)
 
   startScreen()
@@ -74,7 +39,6 @@ class Controller:
 
   def gameLoop():
       game_over = False
-      print("Game Loop")
       #start in the middle
       screen_width = 600
       screen_height = 400
@@ -90,7 +54,7 @@ class Controller:
       apple = Apple()
  
       #load the background image
-      bg = pygame.image.load("background.png")
+      bg = pygame.image.load("assets/background.png")
       bg = pygame.transform.scale(bg, (600, 400))
       while not game_over:
         
@@ -169,7 +133,7 @@ class Controller:
     screen_height = 400
     myfont = pygame.font.SysFont('times new roman',   45)
     #text_1 = myfont.render('Snake Game', True, (141,238,238))
-    text_2 = myfont.render('The Game is Over!!!', True, (193,255,193))
+    text_2 = myfont.render('The Game is Over!!!', True, (0,0,0))
     bg = pygame.image.load("assets/images.png")
     bg = pygame.transform.scale(bg, (600, 400))
     screen = pygame.display.set_mode((screen_width, screen_height))
@@ -178,8 +142,7 @@ class Controller:
     #screen.blit(text_1, (200,200))
     screen.blit(text_2,(100, 160))
     pygame.display.flip()
-    print("This is where endScreen is called")
-    time.sleep(3)
+    time.sleep(5)
 
   endScreen()
 

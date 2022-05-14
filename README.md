@@ -6,7 +6,8 @@
 ### [Assignment Description](https://docs.google.com/document/d/1H4R6yLL7som1lglyXWZ04RvTp_RvRFCCBn6sqv-82ps/edit#)
 
 [Snake Game Presentation Repl](https://replit.com/@Brianna-OO/final-project-cs-geeklords#main.py) \
-[Snake Game Presentation Demo](https://docs.google.com/presentation/d/1KRhsGmiyhKvFk8tZsDDbPL1Xe0GopRUtqusd4xfNnnM/edit#slide=id.g11bf020bd32_0_0)
+[Snake Game Presentation](https://docs.google.com/presentation/d/1KRhsGmiyhKvFk8tZsDDbPL1Xe0GopRUtqusd4xfNnnM/edit#slide=id.g11bf020bd32_0_0)
+[Snake Game Presentation Demo](assests/ProjectDemo.mp4)
 
 ### Team: Geeklords
 #### Erica Rodrigues, Julia Steckler, Brianna Sexton
@@ -15,7 +16,7 @@
 
 ## Project Description *(Software Lead)*
 
-We decided to replicate the classic snake game as our final project. The basic idea of the snake game is a snake moves around a box trying to eat apple. Once the snake eats an apple, it grows in size, and a new apple is spawned for the snake to eat. The game is more complicated because if the snake bites itself (runs into its body) or runs into the boundaries of the box, the game is over. The user controls the direction of the snake's head (up, down, left, or right), and the snake's body follows.
+We decided to replicate the classic snake game as our final project. The basic idea of the snake game is a snake moves around a box trying to eat apple. Once the snake eats an apple, it grows in size, and a new apple is spawned for the snake to eat. The game is more complicated because if the snake runs into the boundaries of the box, the game is over. The user controls the direction of the snake's head (up, down, left, or right), and the snake's body follows.
 
 ***    
 
@@ -24,7 +25,8 @@ We decided to replicate the classic snake game as our final project. The basic i
 *  Welcome and Game Over Screen Original Design:
   ![GUIOriginalDesign](assets/GUI.png)
 
-* << You should also have a screenshot of each screen for your final GUI >>
+* GUI Final Result:
+  ![GUI Final Result](assets/GUIFinalResult.png)
 
 ***        
 
@@ -92,7 +94,6 @@ The back end specialist specifically programs outcomes of actions taken from use
 |6| Press down arrow key on computer| Snake character moves down|Correct| 
 |7| Move snake towards apple with arrow keys on computer to eat apple at randomly generated place| Snake grows in length, current apple is eaten and new apple spwans|Correct| 
 |8| Move snake with arrow keys on computer to hit screen boundaries| Snake hits boundaries, and Game over screen appears|Correct|
-|9| Have snake bite itself by running into itself using arrow keys on computer| Game over screen|Correct| 
 
 REFERENCES:
 https://riptutorial.com/pygame/example/18046/event-loop
